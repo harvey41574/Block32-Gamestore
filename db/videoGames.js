@@ -73,7 +73,7 @@ async function deleteVideoGame(id) {
         const { rows:[videoGame] } =
         await client.query(`
         DELETE FROM videoGames
-        WHERE id= $7
+        WHERE id= $1
         RETURNING *;
         `, [id]);
         return videoGame;
